@@ -105,5 +105,6 @@ venv.bak/
 
 # specific files to ignore
 p_lib.py
+modify_website.py
 autogit.bat
 upload_new_highlight.bat
