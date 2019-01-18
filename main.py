@@ -16,7 +16,7 @@ What affects score:
 	- dramatic drop in score
 '''
 
-n = 1
+n = 10
 scores = {}
 
 # 10 matches ~= 1 sec
@@ -39,3 +39,11 @@ for ID in range(total_matches, total_matches-n, -1):
 
 print ()
 print ('Time elapsed: {}'.format(time.clock()-start))
+print ()
+
+print ('Scores:')
+for k,v in scores.items():
+	print ('\t{: <7} : {}'.format(str(k),str(v)))
+
+print ()
+print (svr.get_match_str(max(scores.keys(), key=lambda k: scores[k])))

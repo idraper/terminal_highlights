@@ -41,8 +41,11 @@ class Replay:
 				'maxEmps' : 0,
 				'maxRemoves' : 0
 		}
+		stats = {
+				'maxHPDrop' : 0,
+				'hpDiff' : 30
+		}
 
-		i = 0
 		for line in str_data.split('\\n'):
 			line = line.replace('\\n', '')
 			line = line.replace('\\t', '')
@@ -57,14 +60,10 @@ class Replay:
 					# print (e)
 					pass
 
-				# if i == 3:
-				# 	print ('breaking')
-				# 	break
-
-				i += 1
-
 		for k,v in zip(p1.items(),p2.items()):
 			print ('{: <30}{}'.format(str(k),str(v)))
+			self.score += k[1] + v[1]
+		print ()
 
 	def checkUnitMaxes(self, player, data, key):
 		self.replaceIfMax(player, 'maxFilters', len(data[key][0]))
