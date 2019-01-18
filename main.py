@@ -19,7 +19,6 @@ What affects score:
 n = 10
 scores = {}
 
-
 # 10 matches ~= 1 sec
 start = time.clock()
 for ID in range(total_matches, total_matches-n, -1):
