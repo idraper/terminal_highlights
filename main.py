@@ -9,8 +9,14 @@ total_matches = svr.get_num_matches() + svr.get_num_matches('One')
 
 # print (total_matches)
 
+'''
+What affects score:
+	- number of cores on board
+	- number of units spawned in a single turn (max)
+	- dramatic drop in score
+'''
+
 n = 1
-replays = {}
 scores = {}
 
 # 10 matches ~= 1 sec
@@ -25,11 +31,11 @@ for ID in range(total_matches, total_matches-n, -1):
 
 
 	# start1 = time.clock()
-	replay = Replay(ID, str_data)
+	# replay = Replay(ID, str_data)
+	scores[ID] = Replay(ID, str_data).get_score()
 	# print ('Class time: {}'.format(time.clock()-start1))
-	# replays[ID] = 
 
 	# print (replays[ID])
 
-
+print ()
 print ('Time elapsed: {}'.format(time.clock()-start))
