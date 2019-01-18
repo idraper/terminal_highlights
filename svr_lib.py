@@ -20,7 +20,7 @@ import time
 import json
 import sys
 
-api_link = 'http://terminal.c1games.com/api'
+api_link = 'https://terminal.c1games.com/api'
 
 def clean_content(content):
     '''
@@ -340,7 +340,7 @@ def get_match_str(mID):
         Returns:
             A string you can copy and paste into a browser to watch that game.
     '''
-    return 'http://terminal.c1games.com/watch/{}'.format(mID)
+    return 'https://terminal.c1games.com/watch/{}'.format(mID)
 
 def get_matches_str(algo, in_leaderboard=False, verbose=False):
     '''

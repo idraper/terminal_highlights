@@ -61,14 +61,14 @@ class Replay:
 					# print (e)
 					pass
 
-		print (self)
+		# print (self)
 		for k,v in zip(p1.items(),p2.items()):
-			print ('{: <30}{}'.format(str(k),str(v)))
+			# print ('{: <30}{}'.format(str(k),str(v)))
 			self.score += (k[1] + v[1]) / 5
-		for s in stats.items():
-			print (s)
+		# for s in stats.items():
+		# 	print (s)
 		self.score += 30 - stats['endHpDiff']
-		print ()
+		# print ()
 
 	def checkUnitMaxes(self, player, data, key):
 		self.replaceIfMax(player, 'maxFilters', len(data[key][0]))
