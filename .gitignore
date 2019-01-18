@@ -105,3 +105,4 @@ venv.bak/
 
 # specific files to ignore
 p_lib.py
+autogit.bat
