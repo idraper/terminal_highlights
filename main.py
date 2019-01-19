@@ -16,7 +16,7 @@ What affects score:
 	- dramatic drop in score
 '''
 
-n = 10
+n = 500
 scores = {}
 
 start = time.clock()
@@ -37,5 +37,6 @@ print ()
 print ()
 match_str= svr.get_match_str(max(scores.keys(), key=lambda k: scores[k]))
 print ('Match link: {}'.format(match_str))
+print ()
 
 modify_url(match_str)
