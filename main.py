@@ -16,15 +16,19 @@ What affects score:
 	- dramatic drop in score
 '''
 
-n = 500
+n = 2000
 scores = {}
 
+print ('Checking replays:')
 start = time.clock()
 for i,ID in enumerate(range(total_matches, total_matches-n, -1)):
-	print ('\t{}.......{}\t\t\t\r'.format(i,ID), end='')
-	raw_str = get_match_raw_str(ID, prefix=False)
-	str_data = svr.get_page_content(raw_str)
-	scores[ID] = Replay(ID, str_data).get_score()
+	try:
+		print ('\t{}.......{}\t\t\t\r'.format(i,ID), end='')
+		raw_str = get_match_raw_str(ID, prefix=False)
+		str_data = svr.get_page_content(raw_str)
+		scores[ID] = Replay(ID, str_data).get_score()
+	except json.decoder.JSONDecodeError as e:
+		print ('Failed with id: {}...skipping'.format(ID))
 
 print ()
 print ('Time elapsed: {}'.format(time.clock()-start))
